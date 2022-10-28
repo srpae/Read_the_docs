@@ -1,0 +1,18 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../cordiccart2pol_test.cpp in debug mode
+   Compiling ../../../../cordiccart2pol.cpp in debug mode
+csim.mk:79: recipe for target 'obj/cordiccart2pol.o' failed
+../../../../cordiccart2pol.cpp: In function 'void cordiccart2pol(data_t, data_t, data_t*, data_t*)':
+../../../../cordiccart2pol.cpp:11:15: error: declaration of 'COS_SIN_TYPE x' shadows a parameter
+  COS_SIN_TYPE x = 0.68735;
+               ^
+../../../../cordiccart2pol.cpp:12:15: error: declaration of 'COS_SIN_TYPE y' shadows a parameter
+  COS_SIN_TYPE y = 0.0;
+               ^
+../../../../cordiccart2pol.cpp:25:21: error: 'NUM_INTEGRATIONS' was not declared in this scope
+  for(int j = 0; j < NUM_INTEGRATIONS ; j++)
+                     ^~~~~~~~~~~~~~~~
+make: *** [obj/cordiccart2pol.o] Error 1
+ERR: [SIM 100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 3] *************** CSIM finish ***************

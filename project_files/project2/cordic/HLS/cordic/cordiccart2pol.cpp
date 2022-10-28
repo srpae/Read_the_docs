@@ -8,5 +8,33 @@ data_t angles[NO_ITER] = {0.785398163397448,	0.463647609000806,	0.24497866312686
 void cordiccart2pol(data_t x, data_t y, data_t * r,  data_t * theta)
 {
 	// Write your code here
+	COS_SIN_TYPE x = 0.68735;
+	COS_SIN_TYPE y = 0.0;
+
+	data_t theta_accum = 0;
+
+	if(x<0)
+	{
+		x = -x;
+
+		theta_accum = y > 0 ? 3.14159 : -3.14159;
+
+
+	}
+	COS_SIN_TYPE factor = 1.0;
+	for(int j = 0; j < NUM_INTEGRATIONS ; j++)
+	{
+		int dir = (theta < 0) ? -1 : 1;
+		COS_SIN_TYPE x_shift = x * dir * factor;
+		COS_SIN_TYPE y_shift = y * dir * factor;
+
+		x = x - y_shift;
+		y = y + x_shift;
+
+		theta_accum += dir * angles[j];
+		factor =factor / 2;
+
+	}
 	
+
 }

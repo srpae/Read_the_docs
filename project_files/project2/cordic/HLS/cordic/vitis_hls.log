@@ -1,0 +1,56 @@
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2022.1/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'srpae' on host 'msi' (Windows NT_amd64 version 6.2) on Thu Oct 27 20:26:49 -0700 2022
+INFO: [HLS 200-10] In directory 'C:/Users/srpae/OneDrive/Documents/GitHub/WWES237C_team2/CORDIC/Read_the_docs/project_files/project2/cordic/HLS/cordic'
+Sourcing Tcl script 'C:/Users/srpae/OneDrive/Documents/GitHub/WWES237C_team2/CORDIC/Read_the_docs/project_files/project2/cordic/HLS/cordic/cordiccart2pol/solution1/csim.tcl'
+INFO: [HLS 200-1510] Running: source C:/Users/srpae/OneDrive/Documents/GitHub/WWES237C_team2/CORDIC/Read_the_docs/project_files/project2/cordic/HLS/cordic/cordiccart2pol/solution1/csim.tcl
+INFO: [HLS 200-1510] Running: open_project cordiccart2pol 
+INFO: [HLS 200-10] Opening project 'C:/Users/srpae/OneDrive/Documents/GitHub/WWES237C_team2/CORDIC/Read_the_docs/project_files/project2/cordic/HLS/cordic/cordiccart2pol'.
+INFO: [HLS 200-1510] Running: set_top cordiccart2pol 
+INFO: [HLS 200-1510] Running: add_files cordiccart2pol.h 
+INFO: [HLS 200-10] Adding design file 'cordiccart2pol.h' to the project
+INFO: [HLS 200-1510] Running: add_files cordiccart2pol.cpp 
+INFO: [HLS 200-10] Adding design file 'cordiccart2pol.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb cordiccart2pol_test.cpp -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
+INFO: [HLS 200-10] Adding test bench file 'cordiccart2pol_test.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution 'C:/Users/srpae/OneDrive/Documents/GitHub/WWES237C_team2/CORDIC/Read_the_docs/project_files/project2/cordic/HLS/cordic/cordiccart2pol/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_interface -m_axi_latency 0 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../cordiccart2pol_test.cpp in debug mode
+   Compiling ../../../../cordiccart2pol.cpp in debug mode
+csim.mk:79: recipe for target 'obj/cordiccart2pol.o' failed
+../../../../cordiccart2pol.cpp: In function 'void cordiccart2pol(data_t, data_t, data_t*, data_t*)':
+../../../../cordiccart2pol.cpp:11:15: error: declaration of 'COS_SIN_TYPE x' shadows a parameter
+  COS_SIN_TYPE x = 0.68735;
+               ^
+../../../../cordiccart2pol.cpp:12:15: error: declaration of 'COS_SIN_TYPE y' shadows a parameter
+  COS_SIN_TYPE y = 0.0;
+               ^
+../../../../cordiccart2pol.cpp:25:21: error: 'NUM_INTEGRATIONS' was not declared in this scope
+  for(int j = 0; j < NUM_INTEGRATIONS ; j++)
+                     ^~~~~~~~~~~~~~~~
+make: *** [obj/cordiccart2pol.o] Error 1
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 0.75 seconds; current allocated memory: 371.062 MB.
+4
+    while executing
+"source C:/Users/srpae/OneDrive/Documents/GitHub/WWES237C_team2/CORDIC/Read_the_docs/project_files/project2/cordic/HLS/cordic/cordiccart2pol/solution1/..."
+    invoked from within
+"hls::main C:/Users/srpae/OneDrive/Documents/GitHub/WWES237C_team2/CORDIC/Read_the_docs/project_files/project2/cordic/HLS/cordic/cordiccart2pol/solutio..."
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$newargs"
+    (procedure "hls_proc" line 16)
+    invoked from within
+"hls_proc [info nameofexecutable] $argv"
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 1 seconds. Total elapsed time: 1.714 seconds; peak allocated memory: 1.102 GB.
